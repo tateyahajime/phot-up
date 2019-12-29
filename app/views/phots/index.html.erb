@@ -13,11 +13,12 @@
     <%# <% end %> 
   <%# <% end %>
   <%= form_with url: root_path do |f|%>
-    <%= f.label :image, class: "fas fa-camera" %>
-    <%= f.file_field :image, id: "phot", style: "display: none;" %>
+    <%= f.label :image, for: "phot", class: "fas fa-camera" do %>
+      <%= f.file_field :image, id: "phot", style: "display: none;" %>
+    <% end %>
+  <% end %>
     <input type="text" id="input"/>
     <button id="btn">PUSH ME</button>
-  <% end %>
   <div id="phots">
     <%= render @phots %>
   <div id="messages">
