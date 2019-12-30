@@ -7,13 +7,14 @@
     <%= f.label :image, for: "phot", class: "fas fa-camera" do %>
       <%= f.file_field :image, id: "phot", style: "display: none;" %>
     <% end %>
-    <%= f.text_field :name, id: "name" %>
+    <%= f.text_field :name, placeholder: "Name", id: "name" %>
     <%= f.text_field :content, placeholder: "Chat", id: "input" %>
     <%# <%= f.submit "PUSH ME", id: "btn" %>
   <% end %>
     <%# <input type="text" id="input"/> %>
     <button id="btn">PUSH ME</button>
   <div id="phots">
+  <div id="names">
   <div id="messages">
     <%= render @phots %>
   </div>

@@ -8,7 +8,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def see(data)
-    Phot.create!(content: data["message"])
+    Phot.create(content: data["message"])
     ActionCable.server.broadcast "room_channel", data["message"]
   end
 end
