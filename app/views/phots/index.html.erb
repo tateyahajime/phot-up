@@ -1,27 +1,21 @@
 <div class="main">
   <div class="title">PHOT UP</div>
 
-  
-  <%# <% @phots.each do |phot| %> 
-    <%# <%= form_with model: phot, local: true do |f| %> 
-      <%# <%= f.text_field :name, class: "name" %> 
-      <%# <%= f.label :image, class: "image" do %> 
-        <%# <%= icon("fad fa-camera-retro", "image", class: "image__icon") %> 
-        <%# <%= f.file_field :image, class: "image__name" %> 
-      <%# <%= f.submit "PUSH ME", class: "btn" %> 
-      <%# <% end %> 
-    <%# <% end %> 
-  <%# <% end %>
+ 
+     
   <%= form_with url: root_path do |f|%>
     <%= f.label :image, for: "phot", class: "fas fa-camera" do %>
       <%= f.file_field :image, id: "phot", style: "display: none;" %>
     <% end %>
+    <%= f.text_field :name, id: "name" %>
+    <%= f.text_field :content, placeholder: "Chat", id: "input" %>
+    <%# <%= f.submit "PUSH ME", id: "btn" %>
   <% end %>
-    <input type="text" id="input"/>
+    <%# <input type="text" id="input"/> %>
     <button id="btn">PUSH ME</button>
   <div id="phots">
-    <%= render @phots %>
   <div id="messages">
+    <%= render @phots %>
   </div>
   </div>
 </div>
